@@ -11,6 +11,12 @@ module "rggroup1" {
   resource_group_location = "centralindia"
   
 }
+module "rggroup3" {
+  source = "../modules/resource_group"
+  resource_group_name     = "rg_hemuu22"
+  resource_group_location = "centralindia"
+  
+}
 module "rggroup2" {
   source = "../modules/resource_group"
   resource_group_name     = "rg_gaurav1"
