@@ -23,6 +23,15 @@ module "rggroup2" {
   resource_group_location = "centralindia"
   
 }
+module "vnet" {
+    depends_on = [ module.rggroup ]
+  source = "../modules/vnet"
+
+  resource_group_name     = "rg_hemuu22"
+  resource_group_location = "centralindia"
+  virtual_network_name    = "vnethemu"
+  address_space           = ["10.0.4.0/16"]
+}
 module "rggroup3" {
   source = "../modules/resource_group"
   resource_group_name     = "rg_gaurav3"
