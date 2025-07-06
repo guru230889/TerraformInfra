@@ -5,6 +5,12 @@ module "rggroup" {
   resource_group_location = "centralindia"
   
 }
+module "rggroup1" {
+  source = "../modules/resource_group"
+  resource_group_name     = "rg_gaurav"
+  resource_group_location = "centralindia"
+  
+}
 module "vnett" {
     depends_on = [ module.rggroup ]
   source = "../modules/vnet"
