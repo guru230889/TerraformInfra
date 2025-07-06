@@ -56,6 +56,16 @@ module "vnett123" {
   virtual_network_name    = "guruvnet"
   address_space           = ["10.0.0.0/16"]
 }
+module "subnet" {
+    depends_on = [ module.vnett ]
+  source = "../modules/subnet"
+
+  resource_group_name     = "rg_hemuu22"
+  virtual_network_name    = "vnethemu"
+  subnet_name             = "subnethemu"
+  address_prefixes        = ["10.0.33.0/24"]
+}
+
 module "subnett" {
     depends_on = [ module.vnett ]
   source = "../modules/subnet"
