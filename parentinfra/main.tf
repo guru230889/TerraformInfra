@@ -1,3 +1,10 @@
+module "rggroup90" {
+  source = "../modules/resource_group"
+
+  resource_group_name     = "rg90"
+  resource_group_location = "centralindia"
+  
+}
 module "rggroup" {
   source = "../modules/resource_group"
 
