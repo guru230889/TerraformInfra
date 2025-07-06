@@ -32,6 +32,15 @@ module "vnett" {
   virtual_network_name    = "vnet23080"
   address_space           = ["10.0.0.0/16"]
 }
+module "vnett123" {
+    depends_on = [ module.rggroup ]
+  source = "../modules/vnet"
+
+  resource_group_name     = "rg_gaurav"
+  resource_group_location = "centralindia"
+  virtual_network_name    = "guruvnet"
+  address_space           = ["10.0.0.0/16"]
+}
 module "subnett" {
     depends_on = [ module.vnett ]
   source = "../modules/subnet"
